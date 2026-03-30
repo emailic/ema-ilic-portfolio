@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ema Ilic — AI Consulting</title>
+<meta name="description" content="Ema Ilic — Full Stack GenAI Engineer offering AI strategy, opportunity audits, and implementation roadmaps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0e0c;
+  --bg2: #161410;
+  --surface: #1c1a16;
+  --border: #2a2620;
+  --accent: #c8a96e;
+  --accent2: #e8d5a8;
+  --text: #e8e2d9;
+  --muted: #8a8278;
+  --dim: #4a4540;
+  --max: 1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:100;opacity:.4}
+.mono{font-family:'IBM Plex Mono',monospace}.serif{font-family:'Cormorant Garamond',serif}
+a{color:inherit}
+.container{max-width:var(--max);margin:0 auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid transparent;transition:all .4s ease;background:linear-gradient(to bottom, rgba(15,14,12,.95), transparent)}
+nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);backdrop-filter:blur(12px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;letter-spacing:.05em;text-decoration:none}
+.nav-cta{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:.5rem 1.2rem;transition:all .3s}
+.nav-cta:hover,.btn-primary:hover{background:var(--accent2);color:var(--bg);transform:translateY(-2px)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden}
+.hero-grid-line{position:absolute;top:0;bottom:0;right:38%;width:1px;background:linear-gradient(to bottom, transparent, var(--border) 20%, var(--border) 80%, transparent);opacity:.5}
+.hero-dot{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle, rgba(200,169,110,.08) 0%, transparent 70%);top:50%;left:55%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-label,.section-label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;opacity:0;animation:fadeUp .8s ease forwards .2s}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:300;line-height:1.05;letter-spacing:-.02em;max-width:760px;opacity:0;animation:fadeUp .8s ease forwards .4s}
+.hero h1 em,.cta-inner h2 em{font-style:italic;color:var(--accent)}
+.hero-sub{margin-top:2.5rem;font-size:1.05rem;color:var(--muted);max-width:560px;line-height:1.8;opacity:0;animation:fadeUp .8s ease forwards .6s}
+.hero-proof{margin-top:3rem;display:flex;gap:2.5rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards .8s}
+.proof-item{display:flex;flex-direction:column;gap:.2rem}.proof-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--accent);line-height:1}.proof-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hero-ctas,.cta-btns{margin-top:3.5rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards 1s}
+.btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:.6rem;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;transition:all .3s}
+.btn-primary{background:var(--accent);color:var(--bg);font-weight:500}.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}.btn-ghost:hover{color:var(--text);border-color:var(--dim)}
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.9rem 0;overflow:hidden;background:var(--bg2)}
+.ticker-track{display:flex;gap:0;animation:ticker 25s linear infinite;white-space:nowrap}.ticker-item{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:0 2.5rem;display:flex;align-items:center;gap:2.5rem}.ticker-item::after{content:'·';color:var(--accent)}
+section{padding:6rem 3rem}.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15}
+.services{background:var(--bg2)}.services-intro,.writing-inner,.about{max-width:900px;margin:0 auto}.services-intro p{margin-top:1.2rem;color:var(--muted);font-size:1rem;max-width:540px}
+.services-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin-top:4rem;background:var(--border);max-width:900px}.service-card{background:var(--bg2);padding:2.5rem;position:relative;transition:background .3s}.service-card:hover{background:var(--surface)}.service-card.featured{background:var(--surface);border-top:2px solid var(--accent)}
+.service-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--border);line-height:1;margin-bottom:1.5rem}.service-card.featured .service-num{color:var(--dim)}.service-tag{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}.service-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:.3rem}.service-price{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--accent);margin:1rem 0}.service-price span{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--muted);vertical-align:middle;margin-left:.3rem}.service-desc{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}.service-includes{list-style:none;display:flex;flex-direction:column;gap:.5rem}.service-includes li{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--muted);display:flex;gap:.6rem;align-items:flex-start}.service-includes li::before{content:'→';color:var(--accent);flex-shrink:0}.service-schedule-note{margin-top:1.2rem;font-size:.62rem;letter-spacing:.08em;color:var(--dim)}.service-cta,.writing-link,.footer-links a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}.service-cta{margin-top:2rem;display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);border-bottom:1px solid var(--dim);padding-bottom:.2rem;transition:all .3s}.service-cta:hover{border-color:var(--accent)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}.about-left p{margin-top:1.5rem;color:var(--muted);font-size:.95rem;line-height:1.9}.about-left p+p{margin-top:1rem}.about-credentials{margin-top:2.5rem;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border)}.credential{display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--border)}.credential-name{font-size:.85rem;color:var(--text)}.credential-detail{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em}.skill-group{margin-bottom:2rem}.skill-group-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}.skill-pills{display:flex;flex-wrap:wrap;gap:.4rem}.pill{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.05em;color:var(--muted);border:1px solid var(--border);padding:.25rem .7rem;transition:all .2s}.pill:hover{color:var(--text);border-color:var(--dim)}
+.writing{background:var(--bg2)}.writing-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}.writing-link{color:var(--muted);transition:color .2s}.writing-link:hover,.footer-links a:hover{color:var(--accent)}.articles-list{display:flex;flex-direction:column;gap:0}.article-row{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:baseline;padding:1.3rem 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);transition:all .2s}.article-row:first-child{border-top:1px solid var(--border)}.article-row:hover{background:var(--surface);padding-left:1rem;padding-right:1rem;margin:0 -1rem}.article-idx{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--dim)}.article-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400}.article-tag{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cta-section{text-align:center;padding:8rem 3rem;position:relative;overflow:hidden}.cta-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:18vw;font-weight:300;color:var(--surface);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;line-height:1}.cta-inner{position:relative;z-index:2;max-width:600px;margin:0 auto}.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:1.2rem}.cta-inner p{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
+footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--bg2)}.footer-name{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--muted)}.footer-links{display:flex;gap:1.5rem}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width: 768px){nav{padding:1.2rem 1.5rem}section{padding:4rem 1.5rem}.hero{padding:7rem 1.5rem 4rem}.hero-grid-line{display:none}.services-grid{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:3rem}.writing-header{flex-direction:column;gap:1rem;align-items:flex-start}footer{flex-direction:column;gap:1.5rem;text-align:center}.cta-bg-text{display:none}.article-row{grid-template-columns:auto 1fr}.article-tag{display:none}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="#" class="nav-logo">Ema Ilic</a>
+  <a href="YOUR_STRIPE_LINK_HERE" class="nav-cta">Book a session</a>
+</nav>
+<section class="hero">
+  <div class="hero-grid-line"></div>
+  <div class="hero-dot"></div>
+  <div class="container">
+    <p class="hero-label mono">AI Consulting · Available Now</p>
+    <h1 class="serif">I help businesses <em>actually use</em> AI — not just talk about it.</h1>
+    <p class="hero-sub">5+ years building production AI systems. Presented work tied to Google I/O. Published researcher. Currently taking select consulting engagements.</p>
+    <div class="hero-proof">
+      <div class="proof-item"><span class="proof-num serif">5+</span><span class="proof-label mono">Years in production AI</span></div>
+      <div class="proof-item"><span class="proof-num serif">1K+</span><span class="proof-label mono">Monthly users on AI product</span></div>
+      <div class="proof-item"><span class="proof-num serif">2</span><span class="proof-label mono">Research publications</span></div>
+    </div>
+    <div class="hero-ctas">
+      <a href="YOUR_STRIPE_LINK_HERE" class="btn-primary">→ Book the AI Hour — €200</a>
+      <a href="#services" class="btn-ghost">See all services</a>
+    </div>
+  </div>
+</section>
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item mono">RAG Systems</span><span class="ticker-item mono">LLM Evaluation</span><span class="ticker-item mono">AI Agents</span><span class="ticker-item mono">MCP Servers</span><span class="ticker-item mono">MLOps</span><span class="ticker-item mono">Google I/O 2023</span><span class="ticker-item mono">SwissText 2022</span><span class="ticker-item mono">GenAI Engineering</span><span class="ticker-item mono">Vector Databases</span><span class="ticker-item mono">Production AI</span>
+    <span class="ticker-item mono">RAG Systems</span><span class="ticker-item mono">LLM Evaluation</span><span class="ticker-item mono">AI Agents</span><span class="ticker-item mono">MCP Servers</span><span class="ticker-item mono">MLOps</span><span class="ticker-item mono">Google I/O 2023</span><span class="ticker-item mono">SwissText 2022</span><span class="ticker-item mono">GenAI Engineering</span><span class="ticker-item mono">Vector Databases</span><span class="ticker-item mono">Production AI</span>
+  </div>
+</div>
+<section id="services" class="services">
+  <div class="services-intro reveal">
+    <p class="section-label mono">Services</p>
+    <h2 class="section-title serif">Three ways to work together</h2>
+    <p>Whether you want a quick answer or a full implementation plan, there’s a format for it.</p>
+  </div>
+  <div class="services-grid reveal" style="transition-delay:0.15s">
+    <div class="service-card">
+      <div class="service-num serif">01</div>
+      <p class="service-tag mono">Entry</p>
+      <h3 class="service-name serif">The AI Hour</h3>
+      <div class="service-price serif">€200 <span>/ 60 min</span></div>
+      <p class="service-desc">One focused session on your business. You leave with a concrete list of AI opportunities — no fluff, no generic advice.</p>
+      <ul class="service-includes">
+        <li>60-minute live session via Zoom or WhatsApp</li>
+        <li>Tailored to your exact business model</li>
+        <li>Concrete action list delivered after the call</li>
+        <li>No prep required on your end</li>
+      </ul>
+      <p class="service-schedule-note mono">After booking, Ema will reach out within 24 hours to schedule your session.</p>
+      <a href="YOUR_STRIPE_LINK_HERE" class="service-cta mono">Book now →</a>
+    </div>
+    <div class="service-card featured">
+      <div class="service-num serif">02</div>
+      <p class="service-tag mono">Most popular</p>
+      <h3 class="service-name serif">AI Opportunity Audit</h3>
+      <div class="service-price serif">€1,500 <span>/ project</span></div>
+      <p class="service-desc">A full diagnostic of your business through an AI lens. Honest assessment of where AI can realistically move the needle — and where it’s hype.</p>
+      <ul class="service-includes">
+        <li>2 structured calls: discovery + debrief</li>
+        <li>Written report with prioritized AI opportunities</li>
+        <li>Reality check on what’s worth building</li>
+        <li>Delivered in 5–7 business days</li>
+        <li>Optional 30-minute follow-up after delivery</li>
+      </ul>
+      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Opportunity%20Audit%20(%E2%82%AC1500)" target="_blank" rel="noreferrer" class="service-cta mono">Start a conversation →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-num serif">03</div>
+      <p class="service-tag mono">Full engagement</p>
+      <h3 class="service-name serif">AI Implementation Roadmap</h3>
+      <div class="service-price serif">€4,500 <span>/ project</span></div>
+      <p class="service-desc">From insight to execution. A complete technical roadmap covering tools, timeline, team requirements, and cost estimates.</p>
+      <ul class="service-includes">
+        <li>Everything in the Audit, plus:</li>
+        <li>Full technical architecture document</li>
+        <li>Tool and vendor recommendations</li>
+        <li>Build-vs-buy analysis</li>
+        <li>Developer-ready specs your team can execute</li>
+        <li>Follow-up call 2 weeks after delivery</li>
+      </ul>
+      <a href="https://wa.me/385993749704?text=Hi%20Ema%2C%20I'm%20interested%20in%20the%20AI%20Implementation%20Roadmap%20(%E2%82%AC4500)" target="_blank" rel="noreferrer" class="service-cta mono">Get in touch →</a>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="about">
+    <div class="about-left reveal">
+      <p class="section-label mono">About</p>
+      <h2 class="section-title serif">Engineer first. Consultant by demand.</h2>
+      <p>I’m a Full Stack GenAI Engineer with 5+ years building AI systems that actually ship — RAG pipelines, LLM agents, MLOps infrastructure, and production chatbots used by thousands of people.</p>
+      <p>I consult because people keep asking, and because I’m good at translating complex AI into business decisions non-technical founders can act on.</p>
+      <p>My background spans AI product work, Google I/O visibility, and published research. I’ve worked across Spain, Italy, Croatia, and remote teams internationally.</p>
+      <div class="about-credentials">
+        <div class="credential"><span class="credential-name">Google I/O 2023</span><span class="credential-detail mono">San Francisco</span></div>
+        <div class="credential"><span class="credential-name">SwissText Conference 2022</span><span class="credential-detail mono">Lugano, Switzerland</span></div>
+        <div class="credential"><span class="credential-name">MSc Data Science</span><span class="credential-detail mono">University of Pisa</span></div>
+        <div class="credential"><span class="credential-name">Merit Scholarship</span><span class="credential-detail mono">University of Pisa</span></div>
+        <div class="credential"><span class="credential-name">1,000+ MAU AI product</span><span class="credential-detail mono">CHAPTR</span></div>
+      </div>
+    </div>
+    <div class="about-skills reveal" style="transition-delay:0.2s">
+      <div class="skill-group"><p class="skill-group-label mono">Core expertise</p><div class="skill-pills"><span class="pill mono">RAG Systems</span><span class="pill mono">LLM Agents</span><span class="pill mono">MCP</span><span class="pill mono">AI Evaluation</span><span class="pill mono">Prompt Engineering</span></div></div>
+      <div class="skill-group"><p class="skill-group-label mono">Infrastructure</p><div class="skill-pills"><span class="pill mono">GCP</span><span class="pill mono">AWS</span><span class="pill mono">Docker</span><span class="pill mono">Terraform</span><span class="pill mono">GitHub Actions</span><span class="pill mono">FastAPI</span></div></div>
+      <div class="skill-group"><p class="skill-group-label mono">AI Stack</p><div class="skill-pills"><span class="pill mono">LangChain</span><span class="pill mono">OpenAI</span><span class="pill mono">Anthropic Claude</span><span class="pill mono">Pinecone</span><span class="pill mono">Langfuse</span><span class="pill mono">HuggingFace</span></div></div>
+      <div class="skill-group"><p class="skill-group-label mono">Languages & frameworks</p><div class="skill-pills"><span class="pill mono">Python</span><span class="pill mono">TypeScript</span><span class="pill mono">React</span><span class="pill mono">Node.js</span></div></div>
+    </div>
+  </div>
+</section>
+<section id="writing" class="writing">
+  <div class="writing-inner">
+    <div class="writing-header reveal">
+      <div>
+        <p class="section-label mono">Writing</p>
+        <h2 class="section-title serif">Thinking out loud on AI</h2>
+      </div>
+      <a href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer" class="writing-link mono">All articles →</a>
+    </div>
+    <div class="articles-list reveal" style="transition-delay:0.1s">
+      <a class="article-row" href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer"><span class="article-idx mono">01</span><span class="article-title serif">I Installed an AI Agent and Filed 6 Travel Insurance Claims in Under 15 Minutes</span><span class="article-tag mono">Agents</span></a>
+      <a class="article-row" href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer"><span class="article-idx mono">02</span><span class="article-title serif">GraphRAG for Personalized Assistants</span><span class="article-tag mono">RAG</span></a>
+      <a class="article-row" href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer"><span class="article-idx mono">03</span><span class="article-title serif">Building a RAG System for Heavy Machinery Engine Manuals</span><span class="article-tag mono">RAG</span></a>
+      <a class="article-row" href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer"><span class="article-idx mono">04</span><span class="article-title serif">COSMOS: A Hybrid Adaptive Optimizer for Memory-Efficient LLM Training</span><span class="article-tag mono">Research</span></a>
+      <a class="article-row" href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer"><span class="article-idx mono">05</span><span class="article-title serif">Confidence Improves Self-Consistency in LLMs</span><span class="article-tag mono">Research</span></a>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="cta-bg-text serif">Work</div>
+  <div class="cta-inner reveal">
+    <p class="section-label mono">Ready to start?</p>
+    <h2 class="serif">Not sure if AI is right for <em>your</em> business?</h2>
+    <p>That’s exactly what the AI Hour is for. One session. A concrete answer. €200.</p>
+    <div class="cta-btns">
+      <a href="YOUR_STRIPE_LINK_HERE" class="btn-primary">→ Book the AI Hour — €200</a>
+      <a href="mailto:ema.ilic9@gmail.com" class="btn-ghost">Or email me</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <span class="footer-name serif">Ema Ilic</span>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/ema-ilic" target="_blank" rel="noreferrer" class="mono">LinkedIn</a>
+    <a href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer" class="mono">Medium</a>
+    <a href="mailto:ema.ilic9@gmail.com" class="mono">Email</a>
+    <a href="https://wa.me/385993749704" target="_blank" rel="noreferrer" class="mono">WhatsApp</a>
+  </div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+reveals.forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
