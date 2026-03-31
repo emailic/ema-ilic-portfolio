@@ -1,6 +1,6 @@
 # my-portfolio
 
-A simple static portfolio/consulting landing page for Ema Ilic.
+A simple static portfolio/consulting landing page.
 
 ## Files
 
