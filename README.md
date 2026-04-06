@@ -1,4 +1,4 @@
-# my-portfolio
+# ema-ilic-portfolio
 
 A simple static portfolio/consulting landing page.
 
@@ -34,7 +34,7 @@ Option 1: just open `index.html` in your browser.
 Option 2: run a tiny local server:
 
 ```bash
-cd my-portfolio
+cd ema-ilic-portfolio
 python3 -m http.server 8000
 ```
 
@@ -46,33 +46,42 @@ http://localhost:8000
 
 ## Publish with GitHub Pages
 
-### If this folder stays inside the existing repo
-
-From the repo root:
+From the repository root:
 
 ```bash
-git add my-portfolio
-git commit -m "Add my-portfolio static site"
+git add index.html
+git commit -m "Update portfolio page"
 git push origin main
 ```
 
 Then in GitHub:
+
 1. Open the repository settings
 2. Go to **Pages**
 3. Set source to **Deploy from a branch**
 4. Select branch: `main`
-5. Select folder: `/my-portfolio`
+5. Select folder: `/ (root)`
 6. Save
 
-GitHub will give you a public URL.
+GitHub will give you a public URL (for example `https://<your-username>.github.io/ema-ilic-portfolio/` if you use a project site).
+
+### Renamed the repository on GitHub?
+
+If you renamed the remote from something else to `ema-ilic-portfolio`, point your local clone at the new URL:
+
+```bash
+git remote set-url origin https://github.com/<your-username>/ema-ilic-portfolio.git
+```
+
+(Use SSH instead if that is how you clone.)
 
 ## Updating the live page later
 
 After changing `index.html`:
 
 ```bash
-git add my-portfolio/index.html
-git commit -m "Update my-portfolio copy"
+git add index.html
+git commit -m "Update portfolio copy"
 git push origin main
 ```
 
@@ -80,7 +89,7 @@ GitHub Pages will redeploy automatically.
 
 ## If you prefer Tiiny Host instead
 
-1. Zip the contents of `my-portfolio`
+1. Zip the contents of this folder (`index.html` and any assets)
 2. Upload at <https://tiiny.host>
 3. Re-upload whenever you change the page
 
