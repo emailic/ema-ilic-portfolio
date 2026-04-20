@@ -50,7 +50,7 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .anchor-callout p{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.04em;line-height:1.75;color:var(--muted)}
 .anchor-callout p strong{color:var(--accent);font-weight:500}
 .hero-ctas{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards .88s}
-.hero-note{margin-top:1.1rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--dim);opacity:0;animation:fadeUp .8s ease forwards 1.02s}
+.hero-note{margin-top:1.1rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--muted);opacity:0;animation:fadeUp .8s ease forwards 1.02s}
 .spots{color:var(--warn)}
 .btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;font-weight:500;transition:all .3s}
 .btn-primary:hover{background:var(--accent2);transform:translateY(-2px)}
@@ -72,12 +72,11 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .enemy-list.good li{color:var(--text)}
 .guarantee-section{padding:5rem 3rem;background:var(--surface)}
 .guarantee-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:3rem;align-items:start}
-.guarantee-box{border:1px solid var(--accent);padding:2.5rem;margin-top:2rem}
-.guarantee-icon{font-size:2.2rem;margin-bottom:1.2rem;display:block}
-.guarantee-title{font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:400;margin-bottom:1rem}
+.guarantee-box{border-left:2px solid var(--accent);padding:1.8rem 2rem;margin-top:2rem;background:rgba(200,169,110,.03)}
+.guarantee-title{font-family:'DM Sans',sans-serif;font-size:1.3rem;font-weight:400;margin-bottom:1rem;line-height:1.4}
 .guarantee-title em{font-style:italic;color:var(--accent)}
-.guarantee-body{color:var(--muted);font-size:.93rem;line-height:1.85}
-.guarantee-fine{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--dim);margin-top:1.5rem}
+.guarantee-body{color:var(--muted);font-size:.88rem;line-height:1.85}
+.guarantee-fine{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--muted);margin-top:1.2rem}
 .for-you{padding:5rem 3rem}
 .for-you-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .for-you-col h2{font-family:'DM Sans',sans-serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;line-height:1.2;margin-bottom:1.5rem}
@@ -97,14 +96,14 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .offer-price{font-family:'DM Sans',sans-serif;font-size:4rem;font-weight:400;color:var(--accent);line-height:1}
 .offer-price-note{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .offer-cta-wrap{width:100%;display:flex;flex-direction:column;align-items:center;gap:.7rem}
-.offer-guarantee{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;color:var(--dim);text-align:center;line-height:1.6}
+.offer-guarantee{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;color:var(--muted);text-align:center;line-height:1.6}
 .replaces{padding:4rem 3rem;background:var(--bg)}
 .replaces-inner{max-width:900px;margin:0 auto}
 .replaces-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:2.5rem;background:var(--border)}
 .replaces-card{background:var(--bg);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.6rem}
 .replaces-name{font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:400;color:var(--text);line-height:1.45}
 .replaces-detail{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.04em;color:var(--muted);line-height:1.6}
-.replaces-price{font-family:'DM Sans',sans-serif;font-size:1.15rem;font-weight:400;color:var(--dim);margin-top:auto;padding-top:.6rem}
+.replaces-price{font-family:'DM Sans',sans-serif;font-size:1.15rem;font-weight:400;color:var(--muted);margin-top:auto;padding-top:.6rem}
 .recs{background:var(--surface);padding:5rem 3rem}
 .recs-inner{max-width:900px;margin:0 auto}
 .recs-header{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-end;flex-wrap:wrap}
@@ -118,7 +117,7 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .recs-meta{margin-top:1.4rem;display:flex;flex-direction:column;gap:.35rem}
 .recs-name{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 .recs-role{color:var(--muted);font-size:.88rem}
-.recs-when{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.08em;color:var(--dim)}
+.recs-when{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.08em;color:var(--muted)}
 .recs-controls{position:absolute;inset:auto 0 0 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;border-top:1px solid var(--border);background:rgba(22,20,16,.95)}
 .recs-btn{appearance:none;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem .9rem;cursor:pointer;transition:all .2s}
 .recs-btn:hover{color:var(--text);border-color:var(--dim)}
@@ -139,7 +138,7 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .cta-inner h2{font-family:'DM Sans',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:1.2rem}
 .cta-inner h2 em{font-style:italic;color:var(--accent)}
 .cta-inner p{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
-.cta-note{margin-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--dim)}
+.cta-note{margin-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--muted)}
 footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--bg2)}
 .footer-name{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;color:var(--muted)}
 .footer-links{display:flex;gap:1.5rem}
@@ -152,7 +151,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 .section-photo{margin:0;position:relative;overflow:hidden;border:1px solid var(--border);background:var(--bg2)}
 .section-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1);cursor:pointer}
 .section-photo figcaption{padding:.7rem 1rem;background:var(--bg2);border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--muted);line-height:1.6}
-  .section-photo figcaption .photo-location{display:block;color:var(--dim);margin-top:.1rem;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase}
+  .section-photo figcaption .photo-location{display:block;color:var(--muted);margin-top:.1rem;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase}
 .user-proof-strip{background:var(--surface);padding:3rem;border-bottom:1px solid var(--border)}
 .user-proof-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:2.5rem;align-items:center}
 .user-proof-inner img{width:100%;display:block;border:1px solid var(--border)}
@@ -280,9 +279,8 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
     </figure>
     <div>
       <p class="section-label mono">The guarantee</p>
-      <h2 class="section-title">No useful plan, no charge.</h2>
+      <h2 class="section-title" style="margin-bottom:.5rem">No useful plan, no charge.</h2>
       <div class="guarantee-box">
-        <span class="guarantee-icon">↑</span>
         <h3 class="guarantee-title">Leave without a clear 90-day plan: <em>full refund, no questions.</em></h3>
         <p class="guarantee-body">
           This isn't a "satisfaction" guarantee. If you don't walk away with a written plan you can use, I refund every cent. I've been doing this long enough to know who I can help and who I can't. I read your intake before confirming the session. If I don't think I can give you something worth paying for, I'll say so before we start.
