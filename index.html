@@ -254,6 +254,12 @@ button.service-cta{background:transparent;border:none;border-bottom:1px solid va
 .contact-actions .btn-ghost{border:1px solid var(--border)}
 .copy-status{margin-top:1rem;min-height:1.1rem}
 
+/* MENTORING STRIP */
+.mentoring-strip{border-top:1px solid var(--border);padding:1.4rem 3rem;display:flex;justify-content:center;align-items:center;gap:.8rem;background:var(--bg2)}
+.mentoring-strip p{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--dim)}
+.mentoring-strip a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--dim);padding-bottom:.15rem;transition:all .2s}
+.mentoring-strip a:hover{border-color:var(--accent)}
+
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--bg2)}
 .footer-name{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;color:var(--muted)}
@@ -345,6 +351,8 @@ _iub.csConfiguration = {
 <nav id="nav">
   <a href="#" class="nav-logo">Ema Ilic</a>
   <div class="nav-links">
+    <a href="index.html" class="nav-link mono" style="color:var(--accent)">Consulting</a>
+    <a href="mentoring.html" class="nav-link mono">Mentoring</a>
     <a href="#services" class="nav-link mono">Services</a>
     <a href="#about" class="nav-link mono">About</a>
     <a href="#portfolio" class="nav-link mono">Portfolio</a>
@@ -788,10 +796,17 @@ _iub.csConfiguration = {
   </div>
 </section>
 
+<!-- MENTORING STRIP -->
+<div class="mentoring-strip" data-track="mentoring_strip">
+  <p>Trying to break into the AI field?</p>
+  <a href="mentoring.html" data-track="mentoring_strip_link">1:1 career mentorship · €300 →</a>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <span class="footer-name serif">Ema Ilic</span>
   <div class="footer-links">
+    <a href="mentoring.html">Mentoring</a>
     <a href="https://linkedin.com/in/ema-ilic" target="_blank" rel="noreferrer">LinkedIn</a>
     <a href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer">Medium</a>
     <a href="#contact">Email</a>

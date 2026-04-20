@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 90-Day Breakthrough · Ema Ilic</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='64'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230f0e0c'/%3E%3Ctext%20x='32'%20y='36'%20text-anchor='middle'%20font-family='system-ui'%20font-size='28'%20font-weight='700'%20fill='%23c8a96e'%3EEI%3C/text%3E%3C/svg%3E">
+<meta name="description" content="One 60-minute session with an AI engineer who's been building in production since 2019. You leave with a 90-day plan you can start the next day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0e0c;
+  --bg2: #161410;
+  --surface: #1c1a16;
+  --border: #2a2620;
+  --accent: #c8a96e;
+  --accent2: #e8d5a8;
+  --text: #e8e2d9;
+  --muted: #8a8278;
+  --dim: #4a4540;
+  --warn: #e87a5a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:100;opacity:.4}
+.mono{font-family:'IBM Plex Mono',monospace}
+a{color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid transparent;transition:all .4s ease;background:linear-gradient(to bottom,rgba(15,14,12,.95),transparent)}
+nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);backdrop-filter:blur(12px)}
+.nav-logo{font-family:'DM Sans',sans-serif;font-size:1.3rem;font-weight:500;letter-spacing:.05em;text-decoration:none}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-link{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--accent)}
+.nav-cta{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:.5rem 1.2rem;transition:all .3s}
+.nav-cta:hover{background:var(--accent);color:var(--bg)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
+.hero-grid-line{position:absolute;top:0;bottom:0;right:38%;width:1px;background:linear-gradient(to bottom,transparent,var(--border) 20%,var(--border) 80%,transparent);opacity:.3;pointer-events:none}
+.hero-dot{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(200,169,110,.05) 0%,transparent 70%);top:50%;left:60%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;opacity:0;animation:fadeUp .8s ease forwards .2s;display:flex;align-items:center;gap:.8rem}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s ease infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'DM Sans',sans-serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:400;line-height:1.1;letter-spacing:-.03em;max-width:860px;opacity:0;animation:fadeUp .8s ease forwards .4s}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{margin-top:2rem;font-size:1.05rem;color:var(--muted);max-width:560px;line-height:1.85;opacity:0;animation:fadeUp .8s ease forwards .6s}
+.hero-sub strong{color:var(--text);font-weight:400}
+.anchor-callout{margin-top:2.5rem;border-left:2px solid var(--accent);padding:.9rem 1.2rem;background:rgba(200,169,110,.04);max-width:520px;opacity:0;animation:fadeUp .8s ease forwards .72s}
+.anchor-callout p{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.04em;line-height:1.75;color:var(--muted)}
+.anchor-callout p strong{color:var(--accent);font-weight:500}
+.hero-ctas{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards .88s}
+.hero-note{margin-top:1.1rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--dim);opacity:0;animation:fadeUp .8s ease forwards 1.02s}
+.spots{color:var(--warn)}
+.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:var(--bg);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;font-weight:500;transition:all .3s}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.6rem;background:transparent;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.9rem 2rem;border:1px solid var(--border);transition:all .3s}
+.btn-ghost:hover{color:var(--text);border-color:var(--dim)}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.section-title{font-family:'DM Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.2}
+.enemy{background:var(--surface);padding:5rem 3rem}
+.enemy-inner{max-width:900px;margin:0 auto}
+.enemy-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:3rem;background:var(--border)}
+.enemy-col{background:var(--surface);padding:2.5rem 2rem}
+.enemy-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem}
+.enemy-label.bad{color:var(--dim)}
+.enemy-label.good{color:var(--accent)}
+.enemy-list{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+.enemy-list li{font-size:.9rem;color:var(--muted);display:flex;gap:.8rem;align-items:flex-start;line-height:1.6}
+.enemy-list.bad li::before{content:'✕';color:var(--dim);flex-shrink:0;margin-top:.05rem}
+.enemy-list.good li::before{content:'→';color:var(--accent);flex-shrink:0;margin-top:.05rem}
+.enemy-list.good li{color:var(--text)}
+.guarantee-section{padding:5rem 3rem;background:var(--surface)}
+.guarantee-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:3rem;align-items:start}
+.guarantee-box{border:1px solid var(--accent);padding:2.5rem;margin-top:2rem}
+.guarantee-icon{font-size:2.2rem;margin-bottom:1.2rem;display:block}
+.guarantee-title{font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:400;margin-bottom:1rem}
+.guarantee-title em{font-style:italic;color:var(--accent)}
+.guarantee-body{color:var(--muted);font-size:.93rem;line-height:1.85}
+.guarantee-fine{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--dim);margin-top:1.5rem}
+.for-you{padding:5rem 3rem}
+.for-you-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.for-you-col h2{font-family:'DM Sans',sans-serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;line-height:1.2;margin-bottom:1.5rem}
+.for-you-list{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+.for-you-list li{font-size:.9rem;color:var(--muted);display:flex;gap:.8rem;align-items:flex-start;line-height:1.6}
+.for-you-list li::before{content:'→';color:var(--accent);flex-shrink:0;margin-top:.05rem}
+.for-you-list.not li::before{content:'✕';color:var(--dim)}
+.offer{padding:5rem 3rem;background:var(--bg2)}
+.offer-inner{max-width:900px;margin:0 auto}
+.offer-card{background:var(--surface);border:1px solid var(--border);border-top:2px solid var(--accent);padding:3rem;margin-top:3rem;display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:start}
+.offer-name{font-family:'DM Sans',sans-serif;font-size:2rem;font-weight:400;margin-bottom:.4rem}
+.offer-tagline{color:var(--muted);font-size:.92rem;line-height:1.8;margin-bottom:1.5rem}
+.offer-includes{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.offer-includes li{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--muted);display:flex;gap:.6rem;align-items:flex-start;line-height:1.5}
+.offer-includes li::before{content:'✓';color:var(--accent);flex-shrink:0}
+.offer-right{display:flex;flex-direction:column;align-items:center;gap:1.2rem;text-align:center}
+.offer-price{font-family:'DM Sans',sans-serif;font-size:4rem;font-weight:400;color:var(--accent);line-height:1}
+.offer-price-note{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.offer-cta-wrap{width:100%;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.offer-guarantee{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;color:var(--dim);text-align:center;line-height:1.6}
+.replaces{padding:4rem 3rem;background:var(--bg)}
+.replaces-inner{max-width:900px;margin:0 auto}
+.replaces-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:2.5rem;background:var(--border)}
+.replaces-card{background:var(--bg);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.6rem}
+.replaces-name{font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:400;color:var(--text);line-height:1.45}
+.replaces-detail{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.04em;color:var(--muted);line-height:1.6}
+.replaces-price{font-family:'DM Sans',sans-serif;font-size:1.15rem;font-weight:400;color:var(--dim);margin-top:auto;padding-top:.6rem}
+.recs{background:var(--surface);padding:5rem 3rem}
+.recs-inner{max-width:900px;margin:0 auto}
+.recs-header{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-end;flex-wrap:wrap}
+.recs-link{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.recs-link:hover{color:var(--accent)}
+.recs-carousel{margin-top:2.5rem;border:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
+.recs-track{display:flex;transition:transform .5s ease;will-change:transform}
+.recs-slide{min-width:100%;padding:2.2rem 2.2rem 4rem}
+.recs-quote{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:300;line-height:1.65;color:var(--text)}
+.recs-quote em{font-style:italic;color:var(--accent)}
+.recs-meta{margin-top:1.4rem;display:flex;flex-direction:column;gap:.35rem}
+.recs-name{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.recs-role{color:var(--muted);font-size:.88rem}
+.recs-when{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.08em;color:var(--dim)}
+.recs-controls{position:absolute;inset:auto 0 0 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;border-top:1px solid var(--border);background:rgba(22,20,16,.95)}
+.recs-btn{appearance:none;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem .9rem;cursor:pointer;transition:all .2s}
+.recs-btn:hover{color:var(--text);border-color:var(--dim)}
+.recs-dots{display:flex;gap:.45rem;align-items:center;justify-content:center;flex:1}
+.recs-dot{width:7px;height:7px;border-radius:999px;border:1px solid var(--dim);background:transparent;cursor:pointer;transition:all .2s}
+.recs-dot[aria-current="true"]{background:var(--accent);border-color:var(--accent)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.about-strip{padding:5rem 3rem}
+.about-strip-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:3rem;align-items:start}
+.bio{color:var(--muted);font-size:.95rem;line-height:1.9;margin-top:1.5rem}
+.credentials{margin-top:2.5rem;border-top:1px solid var(--border)}
+.credential{display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--border)}
+.credential-name{font-size:.85rem;color:var(--text)}
+.credential-detail{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em}
+.final-cta{padding:8rem 3rem;position:relative;overflow:hidden;text-align:center}
+.cta-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'DM Sans',sans-serif;font-size:16vw;font-weight:300;color:var(--surface);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;line-height:1}
+.cta-inner{position:relative;z-index:2;max-width:560px;margin:0 auto}
+.cta-inner h2{font-family:'DM Sans',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:1.2rem}
+.cta-inner h2 em{font-style:italic;color:var(--accent)}
+.cta-inner p{color:var(--muted);margin-bottom:2.5rem;font-size:.95rem}
+.cta-note{margin-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--dim)}
+footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:var(--bg2)}
+.footer-name{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;color:var(--muted)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+.speaking-strip{display:grid;grid-template-columns:3fr 2fr;gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.speaking-strip figure{margin:0;position:relative;overflow:hidden;height:380px;background:var(--bg2)}
+.speaking-strip img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1);cursor:pointer}
+.speaking-strip-caption{font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:.9rem 3rem;background:var(--bg2);border-bottom:1px solid var(--border);text-align:center}
+.section-photo{margin:0;position:relative;overflow:hidden;border:1px solid var(--border);background:var(--bg2)}
+.section-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1);cursor:pointer}
+.section-photo figcaption{padding:.7rem 1rem;background:var(--bg2);border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--muted);line-height:1.6}
+  .section-photo figcaption .photo-location{display:block;color:var(--dim);margin-top:.1rem;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase}
+.user-proof-strip{background:var(--surface);padding:3rem;border-bottom:1px solid var(--border)}
+.user-proof-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:2.5rem;align-items:center}
+.user-proof-inner img{width:100%;display:block;border:1px solid var(--border)}
+.user-proof-text p{font-size:.93rem;color:var(--muted);line-height:1.85}
+.user-proof-text .proof-result{display:block;margin-top:.8rem;font-family:'IBM Plex Mono',monospace;font-size:1.4rem;color:var(--accent)}
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(15,14,12,.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;cursor:pointer}
+.lightbox.active{opacity:1;pointer-events:auto}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;filter:grayscale(1);transform:scale(.92);transition:transform .3s ease}
+.lightbox.active img{transform:scale(1)}
+.lightbox-close{position:absolute;top:1.5rem;right:1.5rem;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:transparent;border:1px solid var(--border);padding:.5rem 1rem;cursor:pointer;transition:all .2s}
+.lightbox-close:hover{color:var(--text);border-color:var(--dim)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:768px){
+  .nav-links{display:none}
+  nav{padding:1.2rem 1.5rem}
+  .hero{padding:7rem 1.5rem 4rem}
+  .hero-grid-line{display:none}
+  .enemy,.guarantee-section,.for-you,.offer,.recs,.about-strip,.final-cta,.replaces{padding:4rem 1.5rem}
+  .user-proof-strip{padding:2.5rem 1.5rem}
+  .user-proof-inner{grid-template-columns:1fr;gap:1.5rem}
+  .user-proof-inner img{max-width:280px}
+  .replaces-grid{grid-template-columns:1fr}
+  .enemy-grid,.for-you-inner{grid-template-columns:1fr;gap:2.5rem}
+  .offer-card{grid-template-columns:1fr;gap:2rem}
+  .offer-right{align-items:flex-start;text-align:left}
+  .cta-bg-text{display:none}
+  .speaking-strip{grid-template-columns:1fr 1fr;height:auto}
+  .speaking-strip figure{height:220px}
+  .guarantee-inner{grid-template-columns:1fr}
+  .about-strip-inner{grid-template-columns:1fr}
+  .section-photo{max-width:320px}
+  .recs-slide{padding:1.8rem 1.4rem 4rem}
+  footer{flex-direction:column;gap:1.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Ema Ilic</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link mono">Consulting</a>
+    <a href="mentoring.html" class="nav-link mono" style="color:var(--accent)">Mentoring</a>
+    <a href="#offer" class="nav-link mono">The session</a>
+    <a href="#about" class="nav-link mono">About</a>
+  </div>
+  <a href="https://book.stripe.com/3cI3cu1w68jC7u52aKe7m04" target="_blank" class="nav-cta" data-track="nav_book">Book now · €300</a>
+</nav>
+
+<section class="hero" data-section="hero">
+  <div class="hero-grid-line"></div>
+  <div class="hero-dot"></div>
+  <p class="hero-label mono"><span class="live-dot"></span> 2 spots open</p>
+  <h1>You've been trying to figure out your AI move for months. <em>Let's sort it out in 60 minutes.</em></h1>
+  <p class="hero-sub">
+    You want to break into AI, or move up because of it, or start using it at work in ways that aren't a waste of time. The problem is the same every time: <strong>you're figuring this out alone, without input from someone who builds AI systems for a living.</strong> I've been doing that since 2019.
+  </p>
+  <div class="anchor-callout">
+    <p>AI-specific roles pay <strong>€10,000 to €40,000 more</strong> than equivalent non-AI positions. People who know how to use AI are getting promoted over people who don't. A €300 session that cuts 6 months off your learning curve pays for itself many times over.</p>
+  </div>
+  <div class="hero-ctas">
+    <a href="https://book.stripe.com/3cI3cu1w68jC7u52aKe7m04" target="_blank" class="btn-primary" data-track="hero_book">Book The 90-Day Breakthrough · €300</a>
+    <a href="#offer" class="btn-ghost" data-track="hero_offer">See what's included</a>
+  </div>
+  <p class="hero-note mono"><span class="spots">2 spots available.</span> Full refund if you don't leave with a plan you can act on.</p>
+</section>
+
+<div class="speaking-strip reveal">
+  <figure>
+    <img src="speaking.jpeg" alt="Ema Ilic presenting the Noa AI chatbot to publishers at Pan Macmillan headquarters in London" loading="lazy">
+  </figure>
+  <figure>
+    <img src="speaking-2.jpeg" alt="Ema Ilic on stage presenting on LLM capabilities at Pan Macmillan" loading="lazy">
+  </figure>
+</div>
+<p class="speaking-strip-caption">Demoing Noa chatbot to publishers · Pan Macmillan HQ, London</p>
+
+<div class="user-proof-strip reveal">
+  <div class="user-proof-inner">
+    <img src="proof-whatsapp.jpg" alt="WhatsApp message from a marketing manager who wanted to stay anonymous" loading="lazy">
+    <div class="user-proof-text">
+      <p>A marketing manager who'd just been laid off in an AI restructuring. We spoke in January. This was her message three months later.</p>
+      <span class="proof-result">€12,000 more than her last salary.</span>
+    </div>
+  </div>
+</div>
+
+<div class="enemy" data-section="enemy">
+  <div class="enemy-inner reveal">
+    <p class="section-label mono">Why you're stuck</p>
+    <h2 class="section-title" style="max-width:680px">There's no shortage of information. What's missing is someone who can tell you which parts apply to you.</h2>
+    <div class="enemy-grid">
+      <div class="enemy-col">
+        <p class="enemy-label bad mono">What most people do</p>
+        <ul class="enemy-list bad">
+          <li>Watch tutorials and courses that give everyone the same advice regardless of where they're starting from</li>
+          <li>Ask people on Reddit and LinkedIn who've never worked on an actual AI team</li>
+          <li>Build projects that impress other beginners but not the people making hiring decisions</li>
+          <li>Try to use AI at work without knowing which tools are genuinely useful and which are just noise</li>
+          <li>Spend 6 to 12 months doing all of this and still feel like they haven't moved</li>
+        </ul>
+      </div>
+      <div class="enemy-col">
+        <p class="enemy-label good mono">What actually works</p>
+        <ul class="enemy-list good">
+          <li>A real diagnosis from someone who has been on both sides: building production AI systems and advising on whether to build them at all</li>
+          <li>A path built around your actual background, not a generic curriculum</li>
+          <li>Honest feedback on what's worth your time right now and what to skip</li>
+          <li>Knowing which AI tools, skills, and projects will matter for what you're trying to do</li>
+          <li>Walking out of one conversation with a 90-day plan you can start the next morning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="guarantee-section" data-section="guarantee">
+  <div class="guarantee-inner reveal">
+    <figure class="section-photo" style="position:sticky;top:6rem">
+      <img src="1712316707182.jpeg" alt="Ema Ilic presenting RAG pipelines at Tech City Pula" loading="lazy">
+      <figcaption>Presenting RAG pipelines to the Tech City Pula audience<span class="photo-location">Pula, Croatia</span></figcaption>
+    </figure>
+    <div>
+      <p class="section-label mono">The guarantee</p>
+      <h2 class="section-title">No useful plan, no charge.</h2>
+      <div class="guarantee-box">
+        <span class="guarantee-icon">↑</span>
+        <h3 class="guarantee-title">Leave without a clear 90-day plan: <em>full refund, no questions.</em></h3>
+        <p class="guarantee-body">
+          This isn't a "satisfaction" guarantee. If you don't walk away with a written plan you can use, I refund every cent. I've been doing this long enough to know who I can help and who I can't. I read your intake before confirming the session. If I don't think I can give you something worth paying for, I'll say so before we start.
+        </p>
+        <p class="guarantee-fine mono">Refund request within 48 hours of the session. That's the only condition.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="for-you" data-section="for_you">
+  <div class="for-you-inner">
+    <div class="for-you-col reveal">
+      <p class="section-label mono">This is for you if</p>
+      <h2>You want a straight answer, not more content to consume.</h2>
+      <ul class="for-you-list">
+        <li>You're trying to move into AI from a different background and want to know the most direct path from where you are</li>
+        <li>You have experience in your field but don't know how AI fits into it, or where to start</li>
+        <li>You've been applying and not getting traction, and want to understand why</li>
+        <li>You want to use AI in your current job in ways that matter to your team or your manager</li>
+        <li>You've consumed a lot of information and feel more confused, not less</li>
+      </ul>
+    </div>
+    <div class="for-you-col reveal" style="transition-delay:.15s">
+      <p class="section-label mono">Probably not for you if</p>
+      <h2>You want someone to agree with you, not challenge you.</h2>
+      <ul class="for-you-list not">
+        <li>You want confirmation that you're already on the right track</li>
+        <li>You're not willing to act on feedback that might be different from what you expected</li>
+        <li>You're looking for a weekly accountability check-in</li>
+        <li>You want a course recommendation list you could have Googled</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section id="offer" data-section="offer" class="offer">
+  <div class="offer-inner">
+    <div class="reveal">
+      <p class="section-label mono">The session</p>
+      <h2 class="section-title">The 90-Day Breakthrough</h2>
+    </div>
+    <div class="offer-card reveal" style="transition-delay:.15s">
+      <div class="offer-left">
+        <p class="offer-tagline">One session. A plan built around your specific situation. Walk out knowing what to do for the next 90 days.</p>
+        <ul class="offer-includes">
+          <li>Intake form reviewed before we speak</li>
+          <li>Draft 90-day plan prepared in advance</li>
+          <li>60-minute session on Google Meet</li>
+          <li>Live refinement of the plan based on your questions</li>
+          <li>Written plan delivered within 24 hours</li>
+          <li>Shortlist of tools and resources picked for your goals</li>
+          <li>Full refund if you don't leave with a usable plan</li>
+        </ul>
+      </div>
+      <div class="offer-right">
+        <div>
+          <div class="offer-price">€300</div>
+          <div class="offer-price-note mono">one time</div>
+        </div>
+        <div class="offer-cta-wrap">
+          <a href="https://book.stripe.com/3cI3cu1w68jC7u52aKe7m04" target="_blank" class="btn-primary" data-track="offer_book" style="width:100%;justify-content:center">Book now →</a>
+          <p class="offer-guarantee mono">Full refund guarantee · 2 spots · Plan within 24h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="replaces" data-section="replaces">
+  <div class="replaces-inner reveal">
+    <p class="section-label mono">What this replaces</p>
+    <div class="replaces-grid">
+      <div class="replaces-card">
+        <div class="replaces-name">AI bootcamp</div>
+        <div class="replaces-detail">12 weeks, generic</div>
+        <div class="replaces-price">€5,000–€15,000</div>
+      </div>
+      <div class="replaces-card">
+        <div class="replaces-name">Career coach</div>
+        <div class="replaces-detail">4 sessions, no AI expertise</div>
+        <div class="replaces-price">€800–€2,000</div>
+      </div>
+      <div class="replaces-card">
+        <div class="replaces-name">More months of self-study and guessing</div>
+        <div class="replaces-detail">&nbsp;</div>
+        <div class="replaces-price">Priceless</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="recommendations" data-section="recommendations" class="recs">
+  <div class="recs-inner">
+    <div class="recs-header reveal">
+      <div>
+        <p class="section-label mono">What people say</p>
+        <h2 class="section-title">From people who've worked with me.</h2>
+      </div>
+      <a class="recs-link mono" href="https://www.linkedin.com/in/ema-ilic/details/recommendations/" target="_blank" rel="noreferrer">All on LinkedIn →</a>
+    </div>
+    <div class="recs-carousel reveal" style="transition-delay:.1s" aria-label="Recommendations carousel">
+      <div class="recs-track" id="recsTrack">
+        <article class="recs-slide">
+          <p class="recs-quote">"She presented the rare ability to bridge the gap between theoretical research and scalable AI infrastructure. <em>She never builds in a vacuum</em> — she always makes sure she understands the broader context before proposing a solution."</p>
+          <div class="recs-meta">
+            <div class="recs-name">Oren Raab</div>
+            <div class="recs-role">Infra GenAI Team Lead · Evinced</div>
+            <div class="recs-when">March 2026 · Managed Ema directly</div>
+          </div>
+        </article>
+        <article class="recs-slide">
+          <p class="recs-quote">"Ema is an exceptional AI engineer who excels in both technical skills and team collaboration. <em>Pivotal in enhancing the conversational capabilities</em> of the Noa chatbot. Always communicative, supportive, and eager to help."</p>
+          <div class="recs-meta">
+            <div class="recs-name">Pano Evangeliou, M.Sc.</div>
+            <div class="recs-role">Sr. AI Engineer · AI Tech Lead</div>
+            <div class="recs-when">October 2024 · Managed Ema directly</div>
+          </div>
+        </article>
+        <article class="recs-slide">
+          <p class="recs-quote">"Her growing knowledge in NLP was a tremendous asset. She <em>skilfully shaped our chatbot's communication style</em> to match what publishers actually needed. I would work with Ema again without hesitation."</p>
+          <div class="recs-meta">
+            <div class="recs-name">Darryll Colthrust</div>
+            <div class="recs-role">Co-CEO at CHAPTR · AI Board Advisor · Angel Investor</div>
+            <div class="recs-when">October 2024 · Managed Ema directly</div>
+          </div>
+        </article>
+      </div>
+      <div class="recs-controls">
+        <button class="recs-btn" type="button" id="recsPrev" aria-label="Previous">← Prev</button>
+        <div class="recs-dots" id="recsDots" role="tablist"></div>
+        <button class="recs-btn" type="button" id="recsNext" aria-label="Next">Next →</button>
+        <span class="sr-only" id="recsStatus" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" data-section="about" class="about-strip">
+  <div class="about-strip-inner reveal">
+    <figure class="section-photo" style="position:sticky;top:6rem">
+      <img src="1681817840977 (1).jpeg" alt="Ema Ilic at Google headquarters in Mountain View, representing CHAPTR during a partner collaboration" loading="lazy">
+      <figcaption>At Google HQ representing CHAPTR for a partner session<span class="photo-location">Mountain View, California</span></figcaption>
+    </figure>
+    <div>
+      <p class="section-label mono">Who you're talking to</p>
+      <h2 class="section-title">I've been building AI systems since 2019. I also know what gets people hired to build them.</h2>
+      <p class="bio">I've been building AI systems in production since 2019, three years before ChatGPT made it a job title. RAG pipelines, LLM agents, evaluation systems, MLOps, across six enterprise clients in publishing, devtools, pharma, IoT, and solar energy. My work was featured at Google I/O in 2023, and I've co-authored published AI research. I've also sat on the advising side of AI hiring decisions, so I know what gets people in the door and what just looks good on paper. I'm offering these sessions because people keep asking, and it turns out I'm good at turning what I know into a plan someone can follow.</p>
+      <div class="credentials">
+        <div class="credential"><span class="credential-name">Building AI in production since 2019</span><span class="credential-detail mono">Before the hype</span></div>
+        <div class="credential"><span class="credential-name">Featured at Google I/O 2023</span><span class="credential-detail mono">San Francisco</span></div>
+        <div class="credential"><span class="credential-name">Published at SwissText Conference 2022</span><span class="credential-detail mono">Lugano</span></div>
+        <div class="credential"><span class="credential-name">MSc Data Science</span><span class="credential-detail mono">University of Pisa · Merit Scholarship</span></div>
+        <div class="credential"><span class="credential-name">6 enterprise clients across 5 industries</span><span class="credential-detail mono">Production AI systems</span></div>
+        <div class="credential"><span class="credential-name">1,000+ monthly active users on one product</span><span class="credential-detail mono">Built and scaled from scratch</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" data-section="final_cta">
+  <div class="cta-bg-text">90 days</div>
+  <div class="cta-inner reveal">
+    <p class="section-label mono">Ready?</p>
+    <h2>One hour. A real plan. <em>€300.</em></h2>
+    <p>2 spots open. Full refund if you don't walk out with a concrete plan. You could keep researching on your own, or you could get a plan in 60 minutes.</p>
+    <a href="https://book.stripe.com/3cI3cu1w68jC7u52aKe7m04" target="_blank" class="btn-primary" data-track="final_cta_book" style="display:inline-flex;margin:0 auto">Book The 90-Day Breakthrough →</a>
+    <p class="cta-note mono" style="margin-top:1.2rem">Written plan within 24h · Full refund guarantee · 2 spots</p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Ema Ilic</span>
+  <div class="footer-links">
+    <a href="index.html">Consulting</a>
+    <a href="https://linkedin.com/in/ema-ilic" target="_blank" rel="noreferrer">LinkedIn</a>
+    <a href="https://medium.com/@ema.ilic9" target="_blank" rel="noreferrer">Medium</a>
+    <a href="mailto:ema.ilic9@gmail.com">Email</a>
+    <a href="https://wa.me/385993749704" target="_blank" rel="noreferrer">WhatsApp</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" type="button">Esc · Close</button>
+  <img src="" alt="">
+</div>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+
+(() => {
+  const track = document.getElementById('recsTrack');
+  const prevBtn = document.getElementById('recsPrev');
+  const nextBtn = document.getElementById('recsNext');
+  const dotsWrap = document.getElementById('recsDots');
+  const status = document.getElementById('recsStatus');
+  if (!track) return;
+  const slides = Array.from(track.querySelectorAll('.recs-slide'));
+  if (slides.length <= 1) return;
+  let idx = 0, timer = null;
+  const AUTOPLAY = 9000;
+  const render = () => {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-current', i === idx ? 'true' : 'false'));
+    if (status) status.textContent = `Rec ${idx + 1} of ${slides.length}`;
+  };
+  const go = (n) => { idx = (n + slides.length) % slides.length; render(); };
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button'; dot.className = 'recs-dot';
+    dot.setAttribute('aria-label', `Rec ${i + 1}`);
+    dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
+    dot.addEventListener('click', () => { go(i); restart(); });
+    dotsWrap.appendChild(dot);
+  });
+  prevBtn.addEventListener('click', () => { go(idx - 1); restart(); });
+  nextBtn.addEventListener('click', () => { go(idx + 1); restart(); });
+  const start = () => { stop(); timer = setInterval(() => go(idx + 1), AUTOPLAY); };
+  const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+  const restart = () => start();
+  [track.closest('.recs-carousel'), prevBtn, nextBtn, dotsWrap].filter(Boolean).forEach(el => {
+    el.addEventListener('mouseenter', stop);
+    el.addEventListener('mouseleave', start);
+    el.addEventListener('focusin', stop);
+    el.addEventListener('focusout', start);
+  });
+  render(); start();
+})();
+
+(() => {
+  const t = (name) => { if (typeof gtag === 'function') gtag('event', name); };
+  document.querySelectorAll('[data-track]').forEach(el => el.addEventListener('click', () => t('click_' + el.dataset.track)));
+  const fired = {};
+  window.addEventListener('scroll', () => {
+    const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    [25, 50, 75, 100].forEach(v => { if (pct >= v && !fired[v]) { fired[v] = true; t('scroll_' + v); } });
+  }, { passive: true });
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { t('view_' + e.target.dataset.section); obs.unobserve(e.target); } });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('[data-section]').forEach(s => obs.observe(s));
+})();
+
+(() => {
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  const close = () => lb.classList.remove('active');
+
+  document.querySelectorAll('.speaking-strip img, .section-photo img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('active');
+    });
+  });
+
+  lb.addEventListener('click', (e) => { if (e.target !== lbImg) close(); });
+  lb.querySelector('.lightbox-close').addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+})();
+</script>
+</body>
+</html>
