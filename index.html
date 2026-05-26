@@ -134,10 +134,19 @@ button.service-cta{background:transparent;border:none;border-bottom:1px solid va
 .you-get-items li::before{content:'✓';color:var(--accent);flex-shrink:0;font-size:.8rem}
 
 /* ABOUT */
-.about-wrap{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-.about-left p{margin-top:1.5rem;color:var(--muted);font-size:.95rem;line-height:1.9}
-.about-left p+p{margin-top:1rem}
+.about-inner{max-width:900px;margin:0 auto}
+.about-header{margin-bottom:2.5rem}
+.about-header .section-title{max-width:720px}
+.about-body{display:grid;grid-template-columns:minmax(220px,260px) 1fr;gap:3rem;align-items:start}
+.section-photo{margin:0;position:relative;overflow:hidden;border:1px solid var(--border);background:var(--bg2)}
+.section-photo img{width:100%;display:block;object-fit:cover;aspect-ratio:1;filter:grayscale(1)}
+.section-photo--portrait img{filter:none}
+.section-photo figcaption{padding:.7rem 1rem;background:var(--bg2);border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;color:var(--muted);line-height:1.6}
+.about-copy p{color:var(--muted);font-size:.95rem;line-height:1.9}
+.about-copy p+p{margin-top:1rem}
 .about-credentials{margin-top:2.5rem;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border)}
+.about-skills{margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 3rem}
+.about-skills .skill-group{margin-bottom:0}
 .credential{display:flex;justify-content:space-between;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--border)}
 .credential-name{font-size:.85rem;color:var(--text)}
 .credential-detail{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em}
@@ -285,7 +294,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   .outcomes-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .services-grid{grid-template-columns:1fr}
-  .about-wrap{grid-template-columns:1fr;gap:3rem}
+  .about-body{grid-template-columns:1fr;gap:2rem}
+  .about-skills{grid-template-columns:1fr;gap:2rem;margin-top:2.5rem;padding-top:2.5rem}
+  .section-photo{max-width:280px}
   .writing-header{flex-direction:column;gap:1rem;align-items:flex-start}
   footer{flex-direction:column;gap:1.5rem;text-align:center}
   .cta-bg-text{display:none}
@@ -620,21 +631,29 @@ _iub.csConfiguration = {
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="about-wrap">
-    <div class="about-left reveal">
+  <div class="about-inner">
+    <header class="about-header reveal">
       <p class="section-label mono">About</p>
       <h2 class="section-title serif">I’m an engineer first, and I consult because I’m good at turning technical options into decisions teams can act on.</h2>
-      <p>I’ve spent seven years shipping AI into production: RAG pipelines, LLM agents, chatbots, MLOps. My work was featured at Google I/O and published at SwissText, and the systems I’ve built serve thousands of people across six enterprise engagements. I consult because non-technical founders and operators need someone who can turn all of that into a clear next step.</p>
-      <p>I occasionally take on longer advisory engagements with funded startups. If that’s what you’re looking for, <a href="#contact">get in touch</a>.</p>
-      <div class="about-credentials">
-        <div class="credential"><span class="credential-name">Google I/O 2023</span><span class="credential-detail mono">San Francisco</span></div>
-        <div class="credential"><span class="credential-name">SwissText Conference 2022</span><span class="credential-detail mono">Lugano, Switzerland</span></div>
-        <div class="credential"><span class="credential-name">MSc Data Science</span><span class="credential-detail mono">University of Pisa</span></div>
-        <div class="credential"><span class="credential-name">Merit Scholarship</span><span class="credential-detail mono">University of Pisa</span></div>
-        <div class="credential"><span class="credential-name">1,000+ MAU AI product</span><span class="credential-detail mono">CHAPTR</span></div>
+    </header>
+    <div class="about-body">
+      <figure class="section-photo section-photo--portrait reveal">
+        <img src="portrait.jpg" alt="Ema Ilic, AI consultant and GenAI engineer" loading="lazy">
+        <figcaption>Ema Ilic · AI consultant &amp; GenAI engineer</figcaption>
+      </figure>
+      <div class="about-copy reveal">
+        <p>I’ve spent seven years shipping AI into production: RAG pipelines, LLM agents, chatbots, MLOps. My work was featured at Google I/O and published at SwissText, and the systems I’ve built serve thousands of people across six enterprise engagements. I consult because non-technical founders and operators need someone who can turn all of that into a clear next step.</p>
+        <p>I occasionally take on longer advisory engagements with funded startups. If that’s what you’re looking for, <a href="#contact">get in touch</a>.</p>
+        <div class="about-credentials">
+          <div class="credential"><span class="credential-name">Google I/O 2023</span><span class="credential-detail mono">San Francisco</span></div>
+          <div class="credential"><span class="credential-name">SwissText Conference 2022</span><span class="credential-detail mono">Lugano, Switzerland</span></div>
+          <div class="credential"><span class="credential-name">MSc Data Science</span><span class="credential-detail mono">University of Pisa</span></div>
+          <div class="credential"><span class="credential-name">Merit Scholarship</span><span class="credential-detail mono">University of Pisa</span></div>
+          <div class="credential"><span class="credential-name">1,000+ MAU AI product</span><span class="credential-detail mono">CHAPTR</span></div>
+        </div>
       </div>
     </div>
-    <div class="about-skills reveal" style="transition-delay:.2s">
+    <div class="about-skills reveal">
       <div class="skill-group"><p class="skill-group-label mono">Core expertise</p><div class="skill-pills"><span class="pill mono">RAG Systems</span><span class="pill mono">LLM Agents</span><span class="pill mono">MCP</span><span class="pill mono">AI Evaluation</span><span class="pill mono">Prompt Engineering</span></div></div>
       <div class="skill-group"><p class="skill-group-label mono">Infrastructure</p><div class="skill-pills"><span class="pill mono">GCP</span><span class="pill mono">AWS</span><span class="pill mono">Docker</span><span class="pill mono">Terraform</span><span class="pill mono">GitHub Actions</span><span class="pill mono">FastAPI</span></div></div>
       <div class="skill-group"><p class="skill-group-label mono">AI Stack</p><div class="skill-pills"><span class="pill mono">LangChain</span><span class="pill mono">OpenAI</span><span class="pill mono">Anthropic Claude</span><span class="pill mono">Pinecone</span><span class="pill mono">Langfuse</span><span class="pill mono">HuggingFace</span></div></div>
