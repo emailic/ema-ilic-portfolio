@@ -36,7 +36,13 @@ nav.scrolled{background:rgba(15,14,12,.97);border-bottom-color:var(--border);bac
 .nav-link:hover{color:var(--accent)}
 .nav-cta{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:.5rem 1.2rem;transition:all .3s}
 .nav-cta:hover{background:var(--accent);color:var(--bg)}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;max-width:1400px;margin:0 auto}
+.hero-text{display:flex;flex-direction:column;padding-right:2rem;max-width:700px}
+.hero-portrait{position:relative;overflow:hidden;opacity:0;animation:fadeUp .8s ease forwards .5s;margin-right:-3rem}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.hero-portrait::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,transparent 40%);pointer-events:none;z-index:1}
+.hero-portrait figcaption{position:absolute;bottom:2.5rem;left:2rem;z-index:2;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.06em;color:var(--text);line-height:1.8}
 .hero-grid-line{position:absolute;top:0;bottom:0;right:38%;width:1px;background:linear-gradient(to bottom,transparent,var(--border) 20%,var(--border) 80%,transparent);opacity:.3;pointer-events:none}
 .hero-dot{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(200,169,110,.05) 0%,transparent 70%);top:50%;left:60%;transform:translate(-50%,-50%);pointer-events:none}
 .hero-label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;opacity:0;animation:fadeUp .8s ease forwards .2s;display:flex;align-items:center;gap:.8rem}
@@ -172,6 +178,12 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   .nav-links{display:none}
   nav{padding:1.2rem 1.5rem}
   .hero{padding:7rem 1.5rem 4rem}
+  .hero-content{grid-template-columns:1fr;gap:0}
+  .hero-text{padding-right:0;max-width:none}
+  .hero-portrait{order:-1;max-width:280px;margin:0 auto 2rem;margin-right:auto}
+  .hero-portrait img{aspect-ratio:3/4;height:auto}
+  .hero-portrait::before{background:linear-gradient(to right,var(--bg) 0%,transparent 30%)}
+  .hero-portrait figcaption{bottom:1.2rem;left:1rem;font-size:.6rem}
   .hero-grid-line{display:none}
   .enemy,.guarantee-section,.for-you,.offer,.recs,.about-strip,.final-cta,.replaces{padding:4rem 1.5rem}
   .user-proof-strip{padding:2.5rem 1.5rem}
@@ -208,30 +220,28 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
 <section class="hero" data-section="hero">
   <div class="hero-grid-line"></div>
   <div class="hero-dot"></div>
-  <p class="hero-label mono"><span class="live-dot"></span> 2 spots open</p>
-  <h1>You've been trying to figure out your AI move for months. <em>Let's sort it out in 60 minutes.</em></h1>
-  <p class="hero-sub">
-    You want to break into AI, or move up because of it, or start using it at work in ways that aren't a waste of time. The problem is the same every time: <strong>you're figuring this out alone, without input from someone who builds AI systems for a living.</strong> I've been doing that since 2019.
-  </p>
-  <div class="anchor-callout">
-    <p>AI-specific roles pay <strong>€10,000 to €40,000 more</strong> than equivalent non-AI positions. People who know how to use AI are getting promoted over people who don't. A €300 session that cuts 6 months off your learning curve pays for itself many times over.</p>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-label mono">Career Mentoring · Currently Available</p>
+      <h1>You've been trying to figure out your AI move for months. <em>Let's sort it out in 60 minutes.</em></h1>
+      <p class="hero-sub">
+        You want to break into AI, or move up because of it, or start using it at work in ways that aren't a waste of time. The problem is the same every time: <strong>you're figuring this out alone, without input from someone who builds AI systems for a living.</strong> I've been doing that since 2019.
+      </p>
+      <div class="anchor-callout">
+        <p>AI-specific roles pay <strong>€10,000 to €40,000 more</strong> than equivalent non-AI positions. People who know how to use AI are getting promoted over people who don't. A €300 session that cuts 6 months off your learning curve pays for itself many times over.</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://book.stripe.com/3cI3cu1w68jC7u52aKe7m04" target="_blank" class="btn-primary" data-track="hero_book">Book The 90-Day Breakthrough · €300</a>
+        <a href="#offer" class="btn-ghost" data-track="hero_offer">See what's included</a>
+      </div>
+      <p class="hero-note mono">Full refund if you don't leave with a plan you can act on.</p>
+    </div>
+    <figure class="hero-portrait">
+      <img src="4.225453-OK.jpg" alt="Ema Ilic, AI consultant and GenAI engineer">
+      <figcaption>Ema Ilic, MSc · AI Consultant &amp; GenAI Engineer</figcaption>
+    </figure>
   </div>
-  <div class="hero-ctas">
-    <a href="https://book.stripe.com/3cI3cu1w68jC7u52aKe7m04" target="_blank" class="btn-primary" data-track="hero_book">Book The 90-Day Breakthrough · €300</a>
-    <a href="#offer" class="btn-ghost" data-track="hero_offer">See what's included</a>
-  </div>
-  <p class="hero-note mono"><span class="spots">2 spots available.</span> Full refund if you don't leave with a plan you can act on.</p>
 </section>
-
-<div class="speaking-strip reveal">
-  <figure>
-    <img src="speaking.jpeg" alt="Ema Ilic presenting the Noa AI chatbot to publishers at Pan Macmillan headquarters in London" loading="lazy">
-  </figure>
-  <figure>
-    <img src="speaking-2.jpeg" alt="Ema Ilic on stage presenting on LLM capabilities at Pan Macmillan" loading="lazy">
-  </figure>
-</div>
-<p class="speaking-strip-caption">Demoing Noa chatbot to publishers · Pan Macmillan HQ, London</p>
 
 <div class="user-proof-strip reveal">
   <div class="user-proof-inner">
@@ -272,6 +282,15 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   </div>
 </div>
 
+<div class="speaking-strip reveal">
+  <figure>
+    <img src="speaking.jpeg" alt="Ema Ilic presenting the Noa AI chatbot to publishers at Pan Macmillan headquarters in London" loading="lazy">
+  </figure>
+  <figure>
+    <img src="speaking-2.jpeg" alt="Ema Ilic on stage presenting on LLM capabilities at Pan Macmillan" loading="lazy">
+  </figure>
+</div>
+<p class="speaking-strip-caption">Demoing Noa chatbot to publishers · Pan Macmillan HQ, London</p>
 
 <div class="guarantee-section" data-section="guarantee">
   <div class="guarantee-inner reveal">
@@ -345,7 +364,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
         </div>
         <div class="offer-cta-wrap">
           <a href="https://book.stripe.com/3cI3cu1w68jC7u52aKe7m04" target="_blank" class="btn-primary" data-track="offer_book" style="width:100%;justify-content:center">Book now →</a>
-          <p class="offer-guarantee mono">Full refund guarantee · 2 spots · Plan within 24h</p>
+          <p class="offer-guarantee mono">Full refund guarantee · Plan within 24h</p>
         </div>
       </div>
     </div>
@@ -448,9 +467,9 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify
   <div class="cta-inner reveal">
     <p class="section-label mono">Ready?</p>
     <h2>One hour. A real plan. <em>€300.</em></h2>
-    <p>2 spots open. Full refund if you don't walk out with a concrete plan. You could keep researching on your own, or you could get a plan in 60 minutes.</p>
+    <p>Full refund if you don't walk out with a concrete plan. You could keep researching on your own, or you could get a plan in 60 minutes.</p>
     <a href="https://book.stripe.com/3cI3cu1w68jC7u52aKe7m04" target="_blank" class="btn-primary" data-track="final_cta_book" style="display:inline-flex;margin:0 auto">Book The 90-Day Breakthrough →</a>
-    <p class="cta-note mono" style="margin-top:1.2rem">Written plan within 24h · Full refund guarantee · 2 spots</p>
+    <p class="cta-note mono" style="margin-top:1.2rem">Written plan within 24h · Full refund guarantee</p>
   </div>
 </section>
 
